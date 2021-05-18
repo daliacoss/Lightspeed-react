@@ -7,7 +7,7 @@ const GlobalStyle = createGlobalStyle`
         border: 0;
         font-family: 'Poppins', sans-serif;
         font-style: normal;
-        text-align:center;
+        font-size: 16px;
     }
 
     body{
@@ -19,17 +19,24 @@ const GlobalStyle = createGlobalStyle`
     }
 
     h4 {
-  font-weight: 500;
-  font-size: 32px;
-  line-height: 48px;
-  letter-spacing: -0.5px;
-}
+      font-weight: 500;
+      font-size: 32px;
+      line-height: 48px;
+      letter-spacing: -0.5px;
+    }
 
-h6 {
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 24px;
-}
+    h6 {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+    textarea, input[type="text"] {
+      background-color: #000000;
+      color: #eee;
+      line-height: 1.5em;
+      border: 1px solid #aaa;
+    }
 `;
 
 export default GlobalStyle;

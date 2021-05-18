@@ -5,12 +5,16 @@ export const ChatContainer = styled.div`
   flex-direction: column;
   position: relative;
   color: #fff;
-  margin: 0 2.5em;
-  min-width: 25em;
+  margin: 0 0.5em;
+  max-width: 400px;
+  flex: 0 0 400px;
 
   @media only screen and (max-width: 1024px) {
     margin: 1em 0.3em;
-    min-width: unset;
+    width: unset;
+    height: 500px;
+    max-width: 100%;
+    flex: unset;
   }
 `;
 
@@ -45,11 +49,13 @@ export const ChatHeading = styled.div`
 export const ChatBody = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100%;
+  margin: auto;
+  margin-bottom: 10px;
+  width: 90%;
   height: 100%;
-  justify-content: center;
   border-top: 0.5px solid rgba(240, 243, 246, 0.1);
   border-radius: 32px;
+  padding: 10px;
 
   i {
     font-weight: 900px;
@@ -58,4 +64,58 @@ export const ChatBody = styled.div`
   @media only screen and (max-width: 1024px) {
     min-height: 300px;
   }
+`;
+
+export const ChatUserName = styled.div`
+  display: flex;
+  margin-bottom: 10px;
+  justify-content: space-between;
+`;
+
+export const ChatUserNameTextBox = styled.input`
+  width: calc(100% - 8em);
+  font-size: 0.8em;
+`;
+
+export const ChatMessageWindow = styled.div`
+  resize: none;
+  flex: 1 1 auto;
+  height: 250px;
+  margin-bottom: 10px;
+  padding: .5em;
+  border: 0px;
+  background: #000;
+  overflow-y: scroll;
+  overflow-wrap: break-word;
+`;
+
+export const ChatComposerForm = styled.form`
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+`;
+
+export const ChatComposerTextBox = styled.textarea`
+  resize: none;
+  height: 3em;
+  width: calc(100% - 6em);
+  font-family: monospace;
+  font-size: 14px;
+`;
+
+export const ChatComposerButton = styled.button`
+  padding: 4px;
+  width: 5em;
+`;
+
+export const ChatMessage = styled.p`
+  font-family: monospace;
+  font-size: 14px;
+  line-height: 1.5em;
+  margin-bottom: 0.25em;
+`;
+
+export const ChatMessageAuthor = styled.span`
+  font: inherit;
+  font-weight: bold;
 `;

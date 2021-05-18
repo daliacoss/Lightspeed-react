@@ -16,6 +16,9 @@ const appReducer = (state, action) => {
     case "info": {
       return { ...state, viewers: action.viewers };
     }
+    case "chat": {
+      return { ...state, chat: state.chat.concat(action.chatMessage) };
+    }
 
     default: {
       return { ...state };
@@ -26,6 +29,7 @@ const appReducer = (state, action) => {
 const initialState = {
   stream: null,
   viewers: null,
+  chat: [],
 };
 
 const App = () => {
@@ -79,6 +83,9 @@ const App = () => {
       }
 
       switch (msg.event) {
+        case "chat":
+          dispatch({"type": "chat", "chatMessage": msg.data});
+          return;
         case "offer":
           console.log("Offer");
           pc.setRemoteDescription(offerCandidate);
@@ -114,11 +121,11 @@ const App = () => {
     <>
       <Header></Header>
       <MainContainer>
-        <VideoContainer>
+        <VideoContainer className="video-container">
           <VideoPlayer src={state.stream} />
           <VideoDetails viewers={state.viewers} />
         </VideoContainer>
-        <LiveChat></LiveChat>
+        <LiveChat chatMessages={state.chat}></LiveChat>
       </MainContainer>
     </>
   );
