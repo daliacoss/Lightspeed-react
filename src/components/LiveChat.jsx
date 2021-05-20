@@ -22,7 +22,7 @@ const formatMessageList = (chatMessages) => {
               <ChatMessage key={`chat-message-${i}`}>{x}</ChatMessage>
             ))*/}
 
-const LiveChat = ({chatMessages}) => {
+const LiveChat = ({chatMessages, disable}) => {
 
   const [messageText, setMessageText] = React.useState("");
   const [userName, _setUserName] = React.useState(
@@ -110,8 +110,12 @@ const LiveChat = ({chatMessages}) => {
               onChange={handleComposerChange}
               onKeyDown={handleComposerKeyDown}
               value={messageText}
+              disabled={disable}
             ></ChatComposerTextBox>
-            <ChatComposerButton onClick={handleSendButtonClick}>Send</ChatComposerButton>
+            <ChatComposerButton
+              onClick={handleSendButtonClick}
+              disabled={disable}
+            >Send</ChatComposerButton>
           </ChatComposerForm>
         </ChatBody>
       </ChatMain>
@@ -123,4 +127,5 @@ export default LiveChat;
 
 LiveChat.propTypes = {
   chatMessages: PropTypes.array,
+  disable: PropTypes.bool,
 };

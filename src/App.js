@@ -125,7 +125,10 @@ const App = () => {
           <VideoPlayer src={state.stream} />
           <VideoDetails viewers={state.viewers} />
         </VideoContainer>
-        <LiveChat chatMessages={state.chat}></LiveChat>
+        <LiveChat
+          chatMessages={state.chat}
+          disable={!socket || socket.readyState !== WebSocket.OPEN}
+        ></LiveChat>
       </MainContainer>
     </>
   );
