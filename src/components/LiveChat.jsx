@@ -84,7 +84,7 @@ const LiveChat = ({chatMessages, disable}) => {
             <label htmlFor="username">User name</label>
             <ChatUserNameTextBox
               type="text"
-              name="username"
+              id="username"
               value={userName}
               onChange={handleUserNameChange}
             ></ChatUserNameTextBox>
@@ -107,6 +107,7 @@ const LiveChat = ({chatMessages, disable}) => {
             <ChatComposerTextBox
               type="text"
               id="chat-message-input"
+              aria-label="Compose message"
               onChange={handleComposerChange}
               onKeyDown={handleComposerKeyDown}
               value={messageText}
