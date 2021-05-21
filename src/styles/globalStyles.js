@@ -37,6 +37,17 @@ const GlobalStyle = createGlobalStyle`
       line-height: 1.5em;
       border: 1px solid #aaa;
     }
+
+    button {
+      color: #000;
+      background-color: #eeeeee;
+      &:hover {
+        background-color: #cccccc;
+      }
+      &:active {
+        background-color: #aaaaaa;
+      }
+    }
 `;
 
 export default GlobalStyle;

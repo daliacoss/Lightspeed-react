@@ -99,6 +99,8 @@ export const ChatComposerTextBox = styled.textarea`
   resize: none;
   height: 3em;
   width: calc(100% - 6em);
+  border-radius: 10px;
+  margin-right: 5px;
   font-family: monospace;
   font-size: 14px;
 `;
@@ -106,6 +108,7 @@ export const ChatComposerTextBox = styled.textarea`
 export const ChatComposerButton = styled.button`
   padding: 4px;
   width: 5em;
+  border-radius: 10px;
 `;
 
 export const ChatMessage = styled.p`
