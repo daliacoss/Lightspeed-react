@@ -26,10 +26,12 @@ const LiveChat = ({chatMessages, disable}) => {
 
   const [messageText, setMessageText] = React.useState("");
   const [userName, _setUserName] = React.useState(
-    `User-${Math.random().toString(16).substr(2,6)}`
+    localStorage.getItem("userName") || `User-${Math.random().toString(16).substr(2,6)}`
   );
   const setUserName = (v) => {
-    _setUserName(v.replace(/^\s+|\s+$/g, '').replace(/(?:\s)/g, "-"));
+    const v_sanitized = v.replace(/^\s+|\s+$/g, '').replace(/(?:\s)/g, "-");
+    _setUserName(v_sanitized);
+    localStorage.setItem("userName", v_sanitized);
   }
   const { socket } = useSocket();
 
